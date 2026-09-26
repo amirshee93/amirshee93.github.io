@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Amir Shee | Theoretical & Computational Soft, Active & Living Matter Physics</title>
+  <meta name="description" content="Academic website of Dr. Amir Shee, Postdoctoral Research Associate at University of Vermont. Research in theoretical and computational soft, active, and living matter physics, non-equilibrium statistical mechanics, stochastic resetting, and collective dynamics." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              200: '#bae0fd',
+              300: '#7cc7fb',
+              400: '#36aaf5',
+              500: '#0c8ee9',
+              600: '#0270c7',
+              700: '#0359a1',
+              800: '#074b85',
+              900: '#0c3f6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom scrollbar and subtle transitions */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #334155;
+    }
+    .badge-rmp { background-color: #f3e8ff; color: #7e22ce; border: 1px solid #d8b4fe; }
+    .dark .badge-rmp { background-color: #3b0764; color: #d8b4fe; border: 1px solid #6b21a8; }
+    .badge-prl { background-color: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
+    .dark .badge-prl { background-color: #082f49; color: #7dd3fc; border: 1px solid #0369a1; }
+    .badge-pre { background-color: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+    .dark .badge-pre { background-color: #451a03; color: #fde68a; border: 1px solid #92400e; }
+    .badge-soft { background-color: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+    .dark .badge-soft { background-color: #064e3b; color: #6ee7b7; border: 1px solid #047857; }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200 antialiased font-sans">
+
+  <!-- ================= TOP NAVIGATION ================= -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/85 dark:bg-slate-900/85 border-b border-slate-200/80 dark:border-slate-800 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#about" class="flex items-center gap-2 group">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-brand-600 to-sky-400 flex items-center justify-center text-white font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
+          AS
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-slate-900 dark:text-white tracking-tight leading-none group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">Amir Shee, Ph.D.</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">Soft, Active & Living Matter Physics</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#about" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">About</a>
+        <a href="#research" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Research</a>
+        <a href="#publications" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Publications</a>
+        <a href="#presentations" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Talks</a>
+        <a href="#education" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Education</a>
+        <a href="#collaborators" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Collaborators</a>
+        <a href="#contact" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Action items -->
+      <div class="flex items-center gap-3">
+        <!-- Dark Mode Toggle Button -->
+        <button id="theme-toggle" aria-label="Toggle Theme" class="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg id="theme-toggle-dark-icon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+
+        <!-- Contact Button -->
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-brand-600 hover:bg-brand-700 text-white shadow-sm transition-all hover:shadow hover:-translate-y-0.5">
+          <span>Get in Touch</span>
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+      <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+      <a href="#research" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Research</a>
+      <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Publications</a>
+      <a href="#presentations" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Talks</a>
+      <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Education</a>
+      <a href="#collaborators" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Collaborators</a>
+      <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-20">
+
+    <!-- ================= HERO & ABOUT SECTION ================= -->
+    <section id="about" class="scroll-mt-24 pt-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        
+        <!-- Left Column: Bio & Links -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 dark:bg-brand-950/70 dark:text-brand-300 border border-brand-200 dark:border-brand-800">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Postdoctoral Research Associate · University of Vermont
+          </div>
+
+          <div class="space-y-2">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
+              Dr. Amir Shee
+            </h1>
+            <p class="text-lg sm:text-xl font-medium text-slate-600 dark:text-slate-300">
+              Theoretical &amp; Computational Soft, Active &amp; Living Matter Physicist
+            </p>
+          </div>
+
+          <!-- Research Statement / Tagline -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-slate-100 to-sky-50 dark:from-slate-900 dark:to-slate-900/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p class="font-semibold text-slate-900 dark:text-white mb-1.5">
+              Research Focus:
+            </p>
+            <p>
+              Investigating how microscopic interactions, self-propulsion, and fluctuations collectively give rise to emergent organization, non-equilibrium rheology, and collective dynamics in active, living, and complex physical systems.
+            </p>
+          </div>
+
+          <!-- Academic Affiliations -->
+          <div class="space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+            <div class="flex items-start gap-3">
+              <span class="font-semibold text-slate-900 dark:text-slate-200 min-w-[70px]">Current:</span>
+              <span><strong>Postdoctoral Research Associate</strong>, Dept. of Physics, College of Engineering & Mathematical Sciences, <strong>University of Vermont</strong> (2024–2026) <br><span class="text-xs text-slate-500">Mentor: Prof. Haicen Yue</span></span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="font-semibold text-slate-900 dark:text-slate-200 min-w-[70px]">Previous:</span>
+              <span><strong>Postdoctoral Scholar</strong>, Dept. of ESAM & NICO, <strong>Northwestern University</strong> (2021–2024) <br><span class="text-xs text-slate-500">Mentor: Prof. Cristián Huepe</span></span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="font-semibold text-slate-900 dark:text-slate-200 min-w-[70px]">PhD:</span>
+              <span><strong>Institute of Physics, Bhubaneswar (IOPB)</strong>, India (2021) <br><span class="text-xs text-slate-500">Supervisor: Prof. Debasish Chaudhuri</span></span>
+            </div>
+          </div>
+
+          <!-- Quick Action Buttons / Profiles -->
+          <div class="pt-2 flex flex-wrap items-center gap-2.5">
+            <a href="mailto:amir.shee@uvm.edu" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-brand-600 hover:bg-brand-700 text-white shadow-sm transition">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              Email Amir
+            </a>
+            
+            <a href="https://scholar.google.com/citations?user=amirshee" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500 dark:hover:border-brand-500 hover:text-brand-600 dark:hover:text-brand-400 shadow-sm transition">
+              <svg class="w-4 h-4 text-sky-600" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+              </svg>
+              Google Scholar
+            </a>
+
+            <a href="https://arxiv.org" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500 dark:hover:border-brand-500 hover:text-brand-600 dark:hover:text-brand-400 shadow-sm transition">
+              <span class="font-bold text-red-600 text-xs">arXiv</span>
+              Preprints
+            </a>
+
+            <a href="https://orcid.org" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs sm:text-sm font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500 shadow-sm transition">
+              <span class="w-4 h-4 rounded-full bg-lime-600 text-white font-bold text-[10px] flex items-center justify-center">iD</span>
+              ORCID
+            </a>
+
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs sm:text-sm font-medium bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500 shadow-sm transition">
+              <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Professional Portrait -->
+        <div class="lg:col-span-5 flex flex-col items-center lg:items-end">
+          <div class="relative group">
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-600 via-sky-400 to-indigo-600 rounded-3xl blur-md opacity-40 group-hover:opacity-75 transition duration-500"></div>
+            <div class="relative w-64 h-72 sm:w-72 sm:h-80 rounded-2xl overflow-hidden border-2 border-white dark:border-slate-800 shadow-xl bg-slate-200 dark:bg-slate-800">
+              <img 
+                src="assets/images/profile.jpg" 
+                alt="Dr. Amir Shee" 
+                class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105"
+                onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=600&q=80'"
+              />
+            </div>
+            <!-- Location & Tag pill -->
+            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-full px-4 py-1.5 shadow-lg flex items-center gap-2 whitespace-nowrap">
+              <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">📍 Burlington, Vermont</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= KEY IMPACT METRICS ================= -->
+    <section class="border-y border-slate-200/80 dark:border-slate-800/80 py-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 shadow-sm">
+          <div class="text-3xl sm:text-4xl font-extrabold text-brand-600 dark:text-brand-400">17+</div>
+          <div class="text-xs uppercase tracking-wider font-semibold text-slate-500 dark:text-slate-400 mt-1">Peer-Reviewed Articles</div>
+        </div>
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 shadow-sm">
+          <div class="text-3xl sm:text-4xl font-extrabold text-purple-600 dark:text-purple-400">RMP & 2× PRL</div>
+          <div class="text-xs uppercase tracking-wider font-semibold text-slate-500 dark:text-slate-400 mt-1">Top Physics Venues</div>
+        </div>
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 shadow-sm">
+          <div class="text-3xl sm:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400">300+</div>
+          <div class="text-xs uppercase tracking-wider font-semibold text-slate-500 dark:text-slate-400 mt-1">Total Citations</div>
+        </div>
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 shadow-sm">
+          <div class="text-3xl sm:text-4xl font-extrabold text-amber-600 dark:text-amber-400">h-index: 9</div>
+          <div class="text-xs uppercase tracking-wider font-semibold text-slate-500 dark:text-slate-400 mt-1">i10-index: 8</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RECENT NEWS / HIGHLIGHTS ================= -->
+    <section class="space-y-6">
+      <div class="flex items-center justify-between">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+          <span class="w-2.5 h-6 rounded-full bg-brand-600"></span>
+          Recent Highlights & News
+        </h2>
+        <span class="text-xs font-medium text-slate-500">Updated 2026</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <!-- News Card 1 -->
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300">March 2026</span>
+            <span class="text-xs font-semibold text-slate-500">Conference</span>
+          </div>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white leading-snug">
+            APS Global Physics Summit 2026 (Denver, CO)
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">
+            Presenting our talk: <em>"Motility allocation controls glass transition in size-asymmetric mixtures."</em>
+          </p>
+        </div>
+
+        <!-- News Card 2 -->
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">Feb 2026</span>
+            <span class="text-xs font-semibold text-slate-500">Publication</span>
+          </div>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white leading-snug">
+            New Article in Physical Review E
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">
+            <em>"Steering chiral active Brownian motion via stochastic position-orientation resetting"</em> published in PRE 113, 025424.
+          </p>
+        </div>
+
+        <!-- News Card 3 -->
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300">Oct 2025</span>
+            <span class="text-xs font-semibold text-slate-500">Publication</span>
+          </div>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white leading-snug">
+            Published in Physical Review Letters
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">
+            <em>"Tuning steady shear rheology through active dopants"</em> (Amir Shee, Ritwik Bandyopadhyay, Haicen Yue) published in PRL 135.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESEARCH THEMES ================= -->
+    <section id="research" class="scroll-mt-24 space-y-8">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+          <span class="w-2.5 h-7 rounded-full bg-brand-600"></span>
+          Core Research Pillars
+        </h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-3xl">
+          Bridging non-equilibrium statistical physics, active matter rheology, living matter and biological transport, and exact analytical dynamics.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Pillar 1: Active Rheology -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-sky-100 dark:bg-sky-950 flex items-center justify-center text-brand-600 dark:text-sky-400 font-bold mb-4">
+              01
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">
+              Emergent Rheology & Active Unjamming
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Investigating non-equilibrium flow, yielding, and deformation in dense disordered active mixtures and amorphous glasses under steady shear. We discovered that a dilute fraction of active dopants fluidizes a dense amorphous packing as effectively as uniform activity, with steady shear flow curves, yield stress, and fluidization scaling with active energy. This work provides a quantitative framework for how minimal active constituents induce non-affine rearrangements to mechanically remodel dense suspensions, tissues, and active composites.
+            </p>
+          </div>
+          <div class="text-xs font-semibold text-brand-700 dark:text-brand-300 flex items-center gap-1.5 flex-wrap pt-2 border-t border-slate-100 dark:border-slate-800/80">
+            <span>Featured in:</span>
+            <span class="badge-prl px-2 py-0.5 rounded text-[11px]">Phys. Rev. Lett. 135, 168302 (2025)</span>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Dense Active Solids -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-purple-600 dark:text-purple-400 font-bold mb-4">
+              02
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">
+              Dense Active Solids & Flocking Dynamics
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Developing normal-mode elasticity and continuum theories for collective order and arrest in crowded self-propelled systems. We proved that intrinsic chirality and rotational noise in active solids drive soft modes, generating macroscopic velocity correlations extending far beyond direct contact. In dense polar active disks, we demonstrated spontaneous noise-induced quenched disorder where angular fluctuations arrest collective motion, and coauthored the landmark review synthesizing self-aligning polar active matter.
+            </p>
+          </div>
+          <div class="text-xs font-semibold text-purple-700 dark:text-purple-300 flex items-center gap-1.5 flex-wrap pt-2 border-t border-slate-100 dark:border-slate-800/80">
+            <span>Featured in:</span>
+            <span class="badge-rmp px-2 py-0.5 rounded text-[11px]">Rev. Mod. Phys. 97, 015007 (2025)</span>
+            <span class="badge-prl px-2 py-0.5 rounded text-[11px]">PRL 131, 168301 (2023)</span>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Living Matter -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-950 flex items-center justify-center text-rose-600 dark:text-rose-400 font-bold mb-4">
+              03
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">
+              Living Matter & Biological Transport
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Formulating quantitative stochastic and mechanical models for intracellular transport and molecular motors in close dialogue with experimental data. In <em>C. elegans</em> neurons, we showed that kinesin-3 (UNC-104) motor trafficking and steady-state distributions remain remarkably robust to large changes in cargo-binding kinetics, while post-translational modifications regulate anterograde transport. In filament–motor systems, we uncovered load-induced limit-cycle oscillations and activity-driven re-entrant open-to-spiral transitions in gliding assays.
+            </p>
+          </div>
+          <div class="text-xs font-semibold text-rose-700 dark:text-rose-300 flex items-center gap-1.5 flex-wrap pt-2 border-t border-slate-100 dark:border-slate-800/80">
+            <span>Featured in:</span>
+            <span class="badge-pre px-2 py-0.5 rounded text-[11px]">Phys. Rev. E (Editors' Suggestion 2025)</span>
+            <span class="badge-soft px-2 py-0.5 rounded text-[11px]">J. Cell Sci. 137, jcs.261553 (2024)</span>
+          </div>
+        </div>
+
+        <!-- Pillar 4: Exact Stochastic Theory & Resetting -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold mb-4">
+              04
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">
+              Exact Stochastic Dynamics & Resetting Protocols
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Developing solvable non-equilibrium statistical mechanics formulations and renewal theories for self-propelled agents. We established a foundational mathematical mapping between active Brownian trajectories and semi-flexible polymers, calculating closed-form expressions for displacement moments, excess kurtosis, and bistabilities under torque, confinement, and speed fluctuations. In sole-author work, we formulated exact renewal descriptions of active Brownian motion subject to stochastic position and orientation resetting, revealing how intermittent restarts steer chiral motion and optimize first-passage search.
+            </p>
+          </div>
+          <div class="text-xs font-semibold text-emerald-700 dark:text-emerald-300 flex items-center gap-1.5 flex-wrap pt-2 border-t border-slate-100 dark:border-slate-800/80">
+            <span>Featured in:</span>
+            <span class="badge-pre px-2 py-0.5 rounded text-[11px]">Phys. Rev. E 113, 025424 (2026)</span>
+            <span class="badge-soft px-2 py-0.5 rounded text-[11px]">Soft Matter 16, 4776 (2020)</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= PUBLICATIONS ================= -->
+    <section id="publications" class="scroll-mt-24 space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+            <span class="w-2.5 h-7 rounded-full bg-brand-600"></span>
+            Publications & Preprints
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+            * denotes equal contribution. Filter by year or search keyword below.
+          </p>
+        </div>
+
+        <!-- Live Search Input -->
+        <div class="relative w-full sm:w-72">
+          <input 
+            type="text" 
+            id="pub-search" 
+            placeholder="Search papers, topics..." 
+            class="w-full pl-9 pr-4 py-2 rounded-xl text-xs sm:text-sm bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-sm"
+          />
+          <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex items-center gap-2 flex-wrap text-xs font-semibold">
+        <button class="pub-filter active px-3.5 py-1.5 rounded-lg bg-brand-600 text-white shadow-sm transition" data-filter="all">All (21)</button>
+        <button class="pub-filter px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition" data-filter="highlight">Highlights</button>
+        <button class="pub-filter px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition" data-filter="preprint">Preprints (4)</button>
+        <button class="pub-filter px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition" data-filter="2026">2026</button>
+        <button class="pub-filter px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition" data-filter="2025">2025</button>
+        <button class="pub-filter px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition" data-filter="2024">2024</button>
+        <button class="pub-filter px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition" data-filter="2023">2023</button>
+        <button class="pub-filter px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition" data-filter="2022">2022</button>
+        <button class="pub-filter px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition" data-filter="2021">2021</button>
+        <button class="pub-filter px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition" data-filter="2020">2020</button>
+      </div>
+
+      <!-- Publication Cards List -->
+      <div id="pubs-container" class="space-y-4">
+
+        <!-- Paper: Tuning steady shear rheology through active dopants -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2025" data-category="highlight">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="badge-prl px-2.5 py-0.5 rounded-full text-xs font-bold">Physical Review Letters</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2025</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Tuning steady shear rheology through active dopants
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            <strong class="text-slate-900 dark:text-white">Amir Shee</strong>, Ritwik Bandyopadhyay, and Haicen Yue
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            Physical Review Letters 135, 168302 (2025)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1103/PhysRevLett.135.168302" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2506.05262" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-prl2025')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-prl2025" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{shee2025tuning,
+  title = {Tuning steady shear rheology through active dopants},
+  author = {Shee, Amir and Bandyopadhyay, Ritwik and Yue, Haicen},
+  journal = {Physical Review Letters},
+  volume = {135},
+  pages = {168302},
+  year = {2025},
+  doi = {10.1103/PhysRevLett.135.168302}
+}</pre>
+            <button onclick="copyBibtex('bib-prl2025')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Self-Aligning Polar Active Matter -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2025" data-category="highlight">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="badge-rmp px-2.5 py-0.5 rounded-full text-xs font-bold">Reviews of Modern Physics</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2025</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Self-Aligning Polar Active Matter
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            Paul Baconnier, Olivier Dauchot, Vincent Démery, Gustavo Düring, Silke Henkes, Cristián Huepe, and <strong class="text-slate-900 dark:text-white">Amir Shee</strong>
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            Reviews of Modern Physics 97, 015007 (2025)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1103/RevModPhys.97.015007" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2403.10151" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-rmp2025')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-rmp2025" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{baconnier2025self,
+  title = {Self-aligning polar active matter},
+  author = {Baconnier, Paul and Dauchot, Olivier and D{\'e}mery, Vincent and D{\"u}ring, Gustavo and Henkes, Silke and Huepe, Cristi{\'a}n and Shee, Amir},
+  journal = {Reviews of Modern Physics},
+  volume = {97},
+  pages = {015007},
+  year = {2025},
+  doi = {10.1103/RevModPhys.97.015007}
+}</pre>
+            <button onclick="copyBibtex('bib-rmp2025')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Noise-Induced Quenched Disorder in Dense Active Systems -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2023" data-category="highlight">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="badge-prl px-2.5 py-0.5 rounded-full text-xs font-bold">Physical Review Letters</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2023</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Noise-Induced Quenched Disorder in Dense Active Systems
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            Guozheng Lin, Zhangang Han, <strong class="text-slate-900 dark:text-white">Amir Shee</strong>, and Cristián Huepe
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            Physical Review Letters 131, 168301 (2023)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1103/PhysRevLett.131.168301" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2304.03630" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-prl2023')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-prl2023" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{lin2023noise,
+  title = {Noise-induced quenched disorder in dense active systems},
+  author = {Lin, Guozheng and Han, Zhangang and Shee, Amir and Huepe, Cristi{\'a}n},
+  journal = {Physical Review Letters},
+  volume = {131},
+  pages = {168301},
+  year = {2023},
+  doi = {10.1103/PhysRevLett.131.168301}
+}</pre>
+            <button onclick="copyBibtex('bib-prl2023')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Steering chiral active Brownian motion via stochastic position-orientation resetting -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2026">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="badge-pre px-2.5 py-0.5 rounded-full text-xs font-bold">Physical Review E</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2026</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Steering chiral active Brownian motion via stochastic position-orientation resetting
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            <strong class="text-slate-900 dark:text-white">Amir Shee</strong> (Sole Author)
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            Physical Review E 113, 025424 (2026)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1103/PhysRevE.113.025424" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2508.12223" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-pre2026-resetting')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-pre2026-resetting" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{shee2026steering,
+  title = {Steering chiral active Brownian motion via stochastic position-orientation resetting},
+  author = {Shee, Amir},
+  journal = {Physical Review E},
+  volume = {113},
+  pages = {025424},
+  year = {2026},
+  doi = {10.1103/PhysRevE.113.025424}
+}</pre>
+            <button onclick="copyBibtex('bib-pre2026-resetting')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: UNC-104 transport properties are robust and independent of changes in its cargo binding -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2025" data-category="highlight">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="badge-pre px-2.5 py-0.5 rounded-full text-xs font-bold">Phys. Rev. E</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-500 text-white">Editors' Suggestion</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2025</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            UNC-104 transport properties are robust and independent of changes in its cargo binding
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            <strong class="text-slate-900 dark:text-white">Amir Shee*</strong>, Vidur Sabharwal*, Sandhya P Koushika, Amitabha Nandi, and Debasish Chaudhuri
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            Physical Review E 111, 064404 (2025)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1103/PhysRevE.111.064404" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2409.02655" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-pre2025-unc104')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-pre2025-unc104" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{shee2025transport,
+  title = {Transport properties of the motor protein UNC-104 are robust and independent of changes in its cargo binding},
+  author = {Shee, Amir and Sabharwal, Vidur and Koushika, Sandhya P. and Nandi, Amitabha and Chaudhuri, Debasish},
+  journal = {Physical Review E},
+  volume = {111},
+  pages = {064404},
+  year = {2025},
+  doi = {10.1103/PhysRevE.111.064404}
+}</pre>
+            <button onclick="copyBibtex('bib-pre2025-unc104')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Collective dynamics of densely confined active polar disks with self- and mutual alignment -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2025">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">SciPost Physics</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2025</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Collective dynamics of densely confined active polar disks with self- and mutual alignment
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            Weizhen Tang*, Yating Zheng*, <strong class="text-slate-900 dark:text-white">Amir Shee</strong>, Guozheng Lin, Zhangang Han, Pawel Romanczuk, and Cristián Huepe
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            SciPost Phys. 19, 012 (2025)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.21468/SciPostPhys.19.1.012" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2410.13705" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-scipost2025')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-scipost2025" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{tang2025collective,
+  title = {Collective dynamics of densely confined active polar disks with self- and mutual alignment},
+  author = {Tang, Weizhen and Zheng, Yating and Shee, Amir and Lin, Guozheng and Han, Zhangang and Romanczuk, Pawel and Huepe, Cristi{\'a}n},
+  journal = {SciPost Physics},
+  volume = {19},
+  pages = {012},
+  year = {2025},
+  doi = {10.21468/SciPostPhys.19.1.012}
+}</pre>
+            <button onclick="copyBibtex('bib-scipost2025')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Chirality, confinement and dimensionality govern re-entrant transitions in active matter -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2025">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300">J. Chem. Phys.</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2025</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Chirality, confinement and dimensionality govern re-entrant transitions in active matter
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            Anweshika Pattanayak*, <strong class="text-slate-900 dark:text-white">Amir Shee*</strong>, Debasish Chaudhuri, and Abhishek Chaudhuri
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            The Journal of Chemical Physics 163, 244902 (2025)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1063/5.0301938" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2509.03448" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-jcp2025')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-jcp2025" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{pattanayak2025chirality,
+  title = {Chirality, confinement, and dimensionality govern re-entrant transitions in active matter},
+  author = {Pattanayak, Anweshika and Shee, Amir and Chaudhuri, Debasish and Chaudhuri, Abhishek},
+  journal = {The Journal of Chemical Physics},
+  volume = {163},
+  number = {24},
+  pages = {244902},
+  year = {2025},
+  doi = {10.1063/5.0301938}
+}</pre>
+            <button onclick="copyBibtex('bib-jcp2025')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Dynamical metastability and re-entrant localization of trapped active elements with speed and orientation fluctuations -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2025">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300">Phys. Rev. Research</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2025</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Dynamical metastability and re-entrant localization of trapped active elements with speed and orientation fluctuations
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            Manish Patel, <strong class="text-slate-900 dark:text-white">Amir Shee</strong>, and Debasish Chaudhuri
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            Phys. Rev. Research 7, 013126 (2025)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1103/PhysRevResearch.7.013126" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2410.22004" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-prresearch2025')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-prresearch2025" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{patel2025dynamical,
+  title = {Dynamical metastability and re-entrant localization of trapped active elements with speed and orientation fluctuations},
+  author = {Patel, Manish and Shee, Amir and Chaudhuri, Debasish},
+  journal = {Physical Review Research},
+  volume = {7},
+  pages = {013126},
+  year = {2025},
+  doi = {10.1103/PhysRevResearch.7.013126}
+}</pre>
+            <button onclick="copyBibtex('bib-prresearch2025')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Emergent mesoscale correlations in active solids with noisy chiral dynamics -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2024">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="badge-soft px-2.5 py-0.5 rounded-full text-xs font-bold">Soft Matter</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2024</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Emergent mesoscale correlations in active solids with noisy chiral dynamics
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            <strong class="text-slate-900 dark:text-white">Amir Shee</strong>, Silke Henkes, and Cristián Huepe
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            Soft Matter 20, 7865–7879 (2024)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1039/D4SM00958D" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2407.05113" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-softmatter2024')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-softmatter2024" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{shee2024emergent,
+  title = {Emergent mesoscale correlations in active solids with noisy chiral dynamics},
+  author = {Shee, Amir and Henkes, Silke and Huepe, Cristi{\'a}n},
+  journal = {Soft Matter},
+  volume = {20},
+  pages = {7865--7879},
+  year = {2024},
+  doi = {10.1039/D4SM00958D}
+}</pre>
+            <button onclick="copyBibtex('bib-softmatter2024')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Mobility Anisotropy Reshapes Self-Propelled Motion -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2026" data-category="preprint">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">Preprint Under Review</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2026</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Mobility Anisotropy Reshapes Self-Propelled Motion
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            <strong class="text-slate-900 dark:text-white">Amir Shee</strong> and P. S. Pal
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            arXiv:2605.02148 (2026)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://arxiv.org/abs/2605.02148" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-preprint-mobility')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-preprint-mobility" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{shee2026mobility,
+  title = {Mobility Anisotropy Reshapes Self-Propelled Motion},
+  author = {Shee, Amir and Pal, P. S.},
+  journal = {arXiv:2605.02148},
+  year = {2026},
+  url = {https://arxiv.org/abs/2605.02148}
+}</pre>
+            <button onclick="copyBibtex('bib-preprint-mobility')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Passivity-Driven Order–Disorder Transitions in Self-Aligning Active Matter -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2026" data-category="preprint">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">Preprint Under Review</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2026</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Passivity-Driven Order–Disorder Transitions in Self-Aligning Active Matter
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            Weizhen Tang*, <strong class="text-slate-900 dark:text-white">Amir Shee*</strong>, Zhangang Han, Pawel Romanczuk, Yating Zheng, Cristián Huepe
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            arXiv:2604.15105 (2026)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://arxiv.org/abs/2604.15105" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-preprint-passivity')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-preprint-passivity" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{tang2026passivity,
+  title = {Passivity-Driven Order--Disorder Transitions in Self-Aligning Active Matter},
+  author = {Tang, Weizhen and Shee, Amir and Han, Zhangang and Romanczuk, Pawel and Zheng, Yating and Huepe, Cristi{\'a}n},
+  journal = {arXiv:2604.15105},
+  year = {2026},
+  url = {https://arxiv.org/abs/2604.15105}
+}</pre>
+            <button onclick="copyBibtex('bib-preprint-passivity')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Characterizing exact dynamics of a trapped active Brownian particle under torque in two and three dimensions -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2026" data-category="preprint">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">Preprint Under Review</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2026</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Characterizing exact dynamics of a trapped active Brownian particle under torque in two and three dimensions
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            Anweshika Pattanayak*, <strong class="text-slate-900 dark:text-white">Amir Shee*</strong>, Abhishek Chaudhuri, and Debasish Chaudhuri
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            arXiv:2603.26967 (2026)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://arxiv.org/abs/2603.26967" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-preprint-torque')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-preprint-torque" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{pattanayak2026characterizing,
+  title = {Characterizing exact dynamics of a trapped active Brownian particle under torque in two and three dimensions},
+  author = {Pattanayak, Anweshika and Shee, Amir and Chaudhuri, Abhishek and Chaudhuri, Debasish},
+  journal = {arXiv:2603.26967},
+  year = {2026},
+  url = {https://arxiv.org/abs/2603.26967}
+}</pre>
+            <button onclick="copyBibtex('bib-preprint-torque')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Controlling inertial active Brownian motion via stochastic resetting -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2026" data-category="preprint">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">Preprint Under Review</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2026</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Controlling inertial active Brownian motion via stochastic resetting
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            Manish Patel and <strong class="text-slate-900 dark:text-white">Amir Shee</strong>
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            arXiv:2602.21134 (2026)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://arxiv.org/abs/2602.21134" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-preprint-inertial')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-preprint-inertial" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{patel2026controlling,
+  title = {Controlling inertial active Brownian motion via stochastic resetting},
+  author = {Patel, Manish and Shee, Amir},
+  journal = {arXiv:2602.21134},
+  year = {2026},
+  url = {https://arxiv.org/abs/2602.21134}
+}</pre>
+            <button onclick="copyBibtex('bib-preprint-inertial')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Active Brownian particle under stochastic position and orientation resetting in a harmonic trap -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2025">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="badge-soft px-2.5 py-0.5 rounded-full text-xs font-bold">J. Phys. Commun.</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2025</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Active Brownian particle under stochastic position and orientation resetting in a harmonic trap
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            <strong class="text-slate-900 dark:text-white">Amir Shee</strong> (Sole Author)
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            Journal of Physics Communications 9, 025003 (2025)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1088/2399-6528/adb36e" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2409.06920" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-jpc2025')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-jpc2025" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{shee2025active,
+  title = {Active Brownian particle under stochastic position and orientation resetting in a harmonic trap},
+  author = {Shee, Amir},
+  journal = {Journal of Physics Communications},
+  volume = {9},
+  number = {2},
+  pages = {025003},
+  year = {2025},
+  doi = {10.1088/2399-6528/adb36e}
+}</pre>
+            <button onclick="copyBibtex('bib-jpc2025')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Impact of torque on active Brownian particle: Exact moments in two and three dimensions -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2024">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="badge-soft px-2.5 py-0.5 rounded-full text-xs font-bold">New Journal of Physics</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2024</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Impact of torque on active Brownian particle: Exact moments in two and three dimensions
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            Anweshika Pattanayak, <strong class="text-slate-900 dark:text-white">Amir Shee</strong>, Debasish Chaudhuri, and Abhishek Chaudhuri
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            New Journal of Physics 26 (8), 083024 (2024)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1088/1367-2630/ad6a32" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2404.09650" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-njp2024')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-njp2024" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{pattanayak2024impact,
+  title = {Impact of torque on active Brownian particle: exact moments in two and three dimensions},
+  author = {Pattanayak, Anweshika and Shee, Amir and Chaudhuri, Debasish and Chaudhuri, Abhishek},
+  journal = {New Journal of Physics},
+  volume = {26},
+  number = {8},
+  pages = {083024},
+  year = {2024},
+  doi = {10.1088/1367-2630/ad6a32}
+}</pre>
+            <button onclick="copyBibtex('bib-njp2024')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: F-box protein FBXB-65 regulates anterograde transport of a Kinesin-3 motor UNC-104 through a PTM near its cargo-binding PH domain -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2024">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-pink-100 text-pink-800 dark:bg-pink-950 dark:text-pink-300">Journal of Cell Science</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2024</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            F-box protein FBXB-65 regulates anterograde transport of a Kinesin-3 motor UNC-104 through a PTM near its cargo-binding PH domain
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            Vidur Sabharwal, Sri Padma Priya Boyanapalli, <strong class="text-slate-900 dark:text-white">Amir Shee</strong>, Michael L Nonet, Amitabha Nandi, Debasish Chaudhuri, and Sandhya P Koushika
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            Journal of Cell Science 137, jcs.261553 (2024)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1242/jcs.261553" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://doi.org/10.1101/2023.08.13.553108" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-pink-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-pink-600 dark:text-pink-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              bioRxiv
+            </a>
+            <button onclick="toggleBibtex('bib-jcs2024')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-jcs2024" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{sabharwal2024fbox,
+  title = {F-box protein FBXB-65 regulates anterograde transport of the kinesin-3 motor UNC-104 through a PTM near its cargo-binding PH domain},
+  author = {Sabharwal, Vidur and Boyanapalli, Sri Padma Priya and Shee, Amir and Nonet, Michael L. and Nandi, Amitabha and Chaudhuri, Debasish and Koushika, Sandhya P.},
+  journal = {Journal of Cell Science},
+  volume = {137},
+  number = {7},
+  pages = {jcs261553},
+  year = {2024},
+  doi = {10.1242/jcs.261553}
+}</pre>
+            <button onclick="copyBibtex('bib-jcs2024')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Self-propulsion with speed and orientation fluctuation: Exact computation of moments and dynamical bistabilities in displacement -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2022">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="badge-pre px-2.5 py-0.5 rounded-full text-xs font-bold">Physical Review E</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2022</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Self-propulsion with speed and orientation fluctuation: Exact computation of moments and dynamical bistabilities in displacement
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            <strong class="text-slate-900 dark:text-white">Amir Shee</strong> and Debasish Chaudhuri
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            Physical Review E 105, 054148 (2022)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1103/PhysRevE.105.054148" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2112.13415" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-pre2022')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-pre2022" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{shee2022self,
+  title = {Self-propulsion with speed and orientation fluctuation: Exact computation of moments and dynamical bistabilities in displacement},
+  author = {Shee, Amir and Chaudhuri, Debasish},
+  journal = {Physical Review E},
+  volume = {105},
+  pages = {054148},
+  year = {2022},
+  doi = {10.1103/PhysRevE.105.054148}
+}</pre>
+            <button onclick="copyBibtex('bib-pre2022')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Active Brownian motion with speed fluctuations in arbitrary dimensions: exact calculation of moments and dynamical crossovers -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2022">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="badge-soft px-2.5 py-0.5 rounded-full text-xs font-bold">JSTAT</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2022</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Active Brownian motion with speed fluctuations in arbitrary dimensions: exact calculation of moments and dynamical crossovers
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            <strong class="text-slate-900 dark:text-white">Amir Shee</strong> and Debasish Chaudhuri
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            Journal of Statistical Mechanics: Theory and Experiment 2022 (1), 013201 (2022)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1088/1742-5468/ac403f" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2108.12228" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-jstat2022')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-jstat2022" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{shee2022active,
+  title = {Active Brownian motion with speed fluctuations in arbitrary dimensions: exact calculation of moments and dynamical crossovers},
+  author = {Shee, Amir and Chaudhuri, Debasish},
+  journal = {Journal of Statistical Mechanics: Theory and Experiment},
+  volume = {2022},
+  pages = {013201},
+  year = {2022},
+  doi = {10.1088/1742-5468/ac403f}
+}</pre>
+            <button onclick="copyBibtex('bib-jstat2022')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Filament-motor protein system under loading: instability and limit cycle oscillations -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2021">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="badge-soft px-2.5 py-0.5 rounded-full text-xs font-bold">Soft Materials</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2021</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Filament-motor protein system under loading: instability and limit cycle oscillations
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            <strong class="text-slate-900 dark:text-white">Amir Shee</strong>, Subhadip Ghosh, and Debasish Chaudhuri
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            Soft Materials 19 (3), 323–333 (2021)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1080/1539445X.2021.1887221" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2012.09572" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-softmaterials2021')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-softmaterials2021" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{shee2021filament,
+  title = {Filament-motor protein system under loading: instability and limit cycle oscillations},
+  author = {Shee, Amir and Ghosh, Subhadip and Chaudhuri, Debasish},
+  journal = {Soft Materials},
+  volume = {19},
+  number = {3},
+  pages = {323--333},
+  year = {2021},
+  doi = {10.1080/1539445X.2021.1887221}
+}</pre>
+            <button onclick="copyBibtex('bib-softmaterials2021')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: A semiflexible polymer in a gliding assay: reentrant transition, role of turnover and activity -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2021">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="badge-soft px-2.5 py-0.5 rounded-full text-xs font-bold">Soft Matter</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2021</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            A semiflexible polymer in a gliding assay: reentrant transition, role of turnover and activity
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            <strong class="text-slate-900 dark:text-white">Amir Shee</strong>, Nisha Gupta, Abhishek Chaudhuri, and Debasish Chaudhuri
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            Soft Matter 17 (8), 2120–2131 (2021)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1039/D0SM01181A" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2006.11603" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-softmatter2021')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-softmatter2021" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{shee2021semiflexible,
+  title = {A semiflexible polymer in a gliding assay: reentrant transition, role of turnover and activity},
+  author = {Shee, Amir and Gupta, Nisha and Chaudhuri, Abhishek and Chaudhuri, Debasish},
+  journal = {Soft Matter},
+  volume = {17},
+  number = {8},
+  pages = {2120--2131},
+  year = {2021},
+  doi = {10.1039/D0SM01181A}
+}</pre>
+            <button onclick="copyBibtex('bib-softmatter2021')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Active Brownian particles: mapping to equilibrium polymers and exact computation of moments -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2020">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="badge-soft px-2.5 py-0.5 rounded-full text-xs font-bold">Soft Matter</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2020</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Active Brownian particles: mapping to equilibrium polymers and exact computation of moments
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            <strong class="text-slate-900 dark:text-white">Amir Shee</strong>, Abhishek Dhar, and Debasish Chaudhuri
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            Soft Matter 16 (20), 4776–4787 (2020)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1039/D0SM00367K" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2002.01815" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleBibtex('bib-softmatter2020')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="bib-softmatter2020" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{shee2020active,
+  title = {Active Brownian particles: mapping to equilibrium polymers and exact computation of moments},
+  author = {Shee, Amir and Dhar, Abhishek and Chaudhuri, Debasish},
+  journal = {Soft Matter},
+  volume = {16},
+  number = {20},
+  pages = {4776--4787},
+  year = {2020},
+  doi = {10.1039/D0SM00367K}
+}</pre>
+            <button onclick="copyBibtex('bib-softmatter2020')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ================= TALKS & PRESENTATIONS ================= -->
+    <section id="presentations" class="scroll-mt-24 space-y-6">
+      <div class="flex items-center justify-between">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+          <span class="w-2.5 h-7 rounded-full bg-brand-600"></span>
+          Talks & Presentations
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <!-- 2026 Talks -->
+        <div class="p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-brand-100 text-brand-800 dark:bg-brand-950 dark:text-brand-300">Talk</span>
+              <span class="text-xs font-semibold text-slate-500">March 2026 · Denver, CO</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white">APS Global Physics Summit 2026</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Motility allocation controls glass transition in size-asymmetric mixtures</p>
+          </div>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300">Poster</span>
+              <span class="text-xs font-semibold text-slate-500">May 2026 · Goa, India</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white">10th International Soft Matter Conference (ISMC 2026)</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Heterogeneous size and activity control glass transition</p>
+          </div>
+        </div>
+
+        <!-- 2025 Talks -->
+        <div class="p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">Invited Colloquium</span>
+              <span class="text-xs font-semibold text-slate-500">Jan 2025 · Burlington, VT</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white">University of Vermont Physics Colloquium</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Spatiotemporal dynamics: Insights into dense active matter</p>
+          </div>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-brand-100 text-brand-800 dark:bg-brand-950 dark:text-brand-300">Invited Seminar</span>
+              <span class="text-xs font-semibold text-slate-500">Jan 2025 · Evanston, IL</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white">Northwestern University (Dept. of Mechanical Engineering)</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Spatiotemporal dynamics in dense active matter</p>
+          </div>
+        </div>
+
+        <!-- 2024 Talks -->
+        <div class="p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-brand-100 text-brand-800 dark:bg-brand-950 dark:text-brand-300">Contributed Talk</span>
+              <span class="text-xs font-semibold text-slate-500">March 2024 · Minneapolis, MN</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white">APS March Meeting 2024</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Emergent Phenomena in Anisotropic and Chiral Dense Active Systems</p>
+          </div>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300">Poster</span>
+              <span class="text-xs font-semibold text-slate-500">July–Aug 2024 · Raleigh, NC</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white">8th International Soft Matter Conference (ISMC 2024)</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Emergent Mesoscale Correlations from Noisy Chiral Dynamics in Active Solids</p>
+          </div>
+        </div>
+
+        <!-- 2023 & Earlier Talks -->
+        <div class="p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">Invited Seminar</span>
+              <span class="text-xs font-semibold text-slate-500">May 2023 · Leiden, Netherlands</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white">Leiden University</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Noise-induced Quenched Disorder in Active Elastic Systems</p>
+          </div>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-brand-100 text-brand-800 dark:bg-brand-950 dark:text-brand-300">Contributed Talk</span>
+              <span class="text-xs font-semibold text-slate-500">April 2023 · Dresden, Germany</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white">MPI-PKS Dresden (active23)</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Noise-induced Quenched Disorder in a Dense System of Active Polar Disks</p>
+          </div>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-brand-100 text-brand-800 dark:bg-brand-950 dark:text-brand-300">Contributed Talk</span>
+              <span class="text-xs font-semibold text-slate-500">October 2022 · Coyhaique, Chile</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white">Conference Physics of Active Matter 2022</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Noise-induced Quenched Disorder in Active Elastic Systems</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION & TEACHING ================= -->
+    <section id="education" class="scroll-mt-24 space-y-8">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+          <span class="w-2.5 h-7 rounded-full bg-brand-600"></span>
+          Education & Teaching Experience
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Education Card -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <span>🎓</span> Academic Degrees
+          </h3>
+          <div class="space-y-4 text-sm">
+            <div class="border-l-2 border-brand-500 pl-4 space-y-0.5">
+              <div class="font-bold text-slate-900 dark:text-white">Ph.D. in Physics (2021)</div>
+              <div class="text-slate-600 dark:text-slate-300">Institute of Physics, Bhubaneswar (IOPB), India</div>
+              <div class="text-xs text-slate-500">Supervision: Prof. Debasish Chaudhuri</div>
+            </div>
+
+            <div class="border-l-2 border-sky-400 pl-4 space-y-0.5">
+              <div class="font-bold text-slate-900 dark:text-white">Diploma in Advanced Physics / M.Phil. (2015–2016)</div>
+              <div class="text-slate-600 dark:text-slate-300">Institute of Physics, Bhubaneswar, India</div>
+            </div>
+
+            <div class="border-l-2 border-slate-400 pl-4 space-y-0.5">
+              <div class="font-bold text-slate-900 dark:text-white">M.Sc. in Physics (2013–2015)</div>
+              <div class="text-slate-600 dark:text-slate-300">Indian Institute of Technology (IIT) Kharagpur, India</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teaching Card -->
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <span>📚</span> Teaching & Mentorship
+          </h3>
+          <div class="space-y-4 text-sm">
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60">
+              <div class="font-bold text-slate-900 dark:text-white">Teaching Assistant</div>
+              <div class="text-xs text-brand-600 dark:text-brand-400 font-semibold mt-0.5">Institute of Physics, Bhubaneswar</div>
+              <ul class="mt-2 space-y-1.5 text-xs text-slate-600 dark:text-slate-300 list-disc list-inside">
+                <li><strong>2018:</strong> Advanced Statistical Mechanics (Graduate Level)</li>
+                <li><strong>2017:</strong> Advanced Statistical Mechanics (Graduate Level)</li>
+              </ul>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60">
+              <div class="font-bold text-slate-900 dark:text-white">Research Mentorship</div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                Mentoring junior PhD students and undergraduate researchers on non-equilibrium simulation workflows, stochastic Langevin dynamics, and high-performance computing data analysis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COLLABORATORS ================= -->
+    <section id="collaborators" class="scroll-mt-24 space-y-6">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+          <span class="w-2.5 h-7 rounded-full bg-brand-600"></span>
+          Collaborations & Academic Network
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+          Working across international institutions spanning the USA, India, Germany, Netherlands, and China.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Collab 1 -->
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <div class="text-xs font-bold text-brand-600 uppercase">United States</div>
+          <div class="font-bold text-slate-900 dark:text-white text-sm mt-1">Prof. Haicen Yue</div>
+          <div class="text-xs text-slate-500">University of Vermont</div>
+        </div>
+
+        <!-- Collab 2 -->
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <div class="text-xs font-bold text-brand-600 uppercase">United States</div>
+          <div class="font-bold text-slate-900 dark:text-white text-sm mt-1">Prof. Cristián Huepe</div>
+          <div class="text-xs text-slate-500">Northwestern University</div>
+        </div>
+
+        <!-- Collab 3 -->
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <div class="text-xs font-bold text-brand-600 uppercase">India</div>
+          <div class="font-bold text-slate-900 dark:text-white text-sm mt-1">Prof. Debasish Chaudhuri</div>
+          <div class="text-xs text-slate-500">Institute of Physics, Bhubaneswar</div>
+        </div>
+
+        <!-- Collab 4 -->
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <div class="text-xs font-bold text-brand-600 uppercase">India</div>
+          <div class="font-bold text-slate-900 dark:text-white text-sm mt-1">Prof. Abhishek Chaudhuri</div>
+          <div class="text-xs text-slate-500">IISER Mohali</div>
+        </div>
+
+        <!-- Collab 5 -->
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <div class="text-xs font-bold text-brand-600 uppercase">India</div>
+          <div class="font-bold text-slate-900 dark:text-white text-sm mt-1">Prof. Amitabha Nandi</div>
+          <div class="text-xs text-slate-500">IIT Bombay</div>
+        </div>
+
+        <!-- Collab 6 -->
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <div class="text-xs font-bold text-brand-600 uppercase">India</div>
+          <div class="font-bold text-slate-900 dark:text-white text-sm mt-1">Prof. Arnab Saha</div>
+          <div class="text-xs text-slate-500">University of Calcutta</div>
+        </div>
+
+        <!-- Collab 7 -->
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <div class="text-xs font-bold text-brand-600 uppercase">Netherlands</div>
+          <div class="font-bold text-slate-900 dark:text-white text-sm mt-1">Prof. Silke Henkes</div>
+          <div class="text-xs text-slate-500">Leiden University</div>
+        </div>
+
+        <!-- Collab 8 -->
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <div class="text-xs font-bold text-brand-600 uppercase">Germany</div>
+          <div class="font-bold text-slate-900 dark:text-white text-sm mt-1">Prof. Pawel Romanczuk</div>
+          <div class="text-xs text-slate-500">Humboldt-Universität zu Berlin</div>
+        </div>
+
+        <!-- Collab 9 -->
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <div class="text-xs font-bold text-brand-600 uppercase">People's Republic of China</div>
+          <div class="font-bold text-slate-900 dark:text-white text-sm mt-1">Prof. Zhangang Han</div>
+          <div class="text-xs text-slate-500">Beijing Normal University</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT SECTION ================= -->
+    <section id="contact" class="scroll-mt-24 space-y-8">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+          <span class="w-2.5 h-7 rounded-full bg-brand-600"></span>
+          Contact & Office
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+          Open to research inquiries, seminar invitations, and scientific collaborations.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div class="md:col-span-6 space-y-4">
+          <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base">Office Address</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <strong>Innovation Hall, Room E202A</strong><br>
+              Department of Physics, College of Engineering and Mathematical Sciences<br>
+              University of Vermont<br>
+              82 University Place, Burlington, VT 05405, USA
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base">Direct Channels</h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                <span class="font-semibold text-slate-900 dark:text-white min-w-[60px]">Email:</span>
+                <a href="mailto:amir.shee@uvm.edu" class="text-brand-600 dark:text-brand-400 hover:underline">amir.shee@uvm.edu</a>
+              </div>
+              <div class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                <span class="font-semibold text-slate-900 dark:text-white min-w-[60px]">Phone:</span>
+                <span>+1 (773) 516-3068</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-6 p-6 rounded-2xl bg-gradient-to-br from-brand-900 to-slate-900 text-white flex flex-col justify-between shadow-xl">
+          <div class="space-y-3">
+            <h3 class="text-xl font-bold">Interested in collaborating?</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Feel free to reach out via email for potential research collaborations, seminar talks, or scientific discussions.
+            </p>
+          </div>
+          <div class="pt-6">
+            <a href="mailto:amir.shee@uvm.edu" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-white text-slate-900 hover:bg-slate-100 transition shadow">
+              Send an Email
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="mt-20 border-t border-slate-200 dark:border-slate-800 py-8 bg-white dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+      <p>© 2026 Dr. Amir Shee. Built with modern web standards & hosted on GitHub Pages.</p>
+      <div class="flex items-center gap-4">
+        <a href="#about" class="hover:text-brand-600 transition">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Dark mode toggle logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      lightIcon.classList.remove('hidden');
+      darkIcon.classList.add('hidden');
+    } else {
+      document.documentElement.classList.remove('dark');
+      lightIcon.classList.add('hidden');
+      darkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+        lightIcon.classList.add('hidden');
+        darkIcon.classList.remove('hidden');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+        lightIcon.classList.remove('hidden');
+        darkIcon.classList.add('hidden');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Publication BibTeX toggle
+    function toggleBibtex(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('hidden');
+    }
+
+    function copyBibtex(id) {
+      const container = document.getElementById(id);
+      if (!container) return;
+      const pre = container.querySelector('pre');
+      const textToCopy = pre ? pre.innerText : container.innerText;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const btn = container.querySelector('button');
+        if (btn) {
+          const orig = btn.innerText;
+          btn.innerText = 'Copied!';
+          setTimeout(() => { btn.innerText = orig; }, 1800);
+        }
+      });
+    }
+
+    // Live search & category filters for publications
+    const searchInput = document.getElementById('pub-search');
+    const filterButtons = document.querySelectorAll('.pub-filter');
+    const pubCards = document.querySelectorAll('.pub-card');
+
+    let currentFilter = 'all';
+
+    function filterPubs() {
+      const query = (searchInput.value || '').toLowerCase();
+      
+      pubCards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const year = card.getAttribute('data-year');
+        const category = card.getAttribute('data-category') || '';
+        
+        const matchesQuery = text.includes(query);
+        let matchesFilter = true;
+        
+        if (currentFilter === 'highlight') {
+          matchesFilter = category === 'highlight';
+        } else if (currentFilter === 'preprint') {
+          matchesFilter = category === 'preprint';
+        } else if (currentFilter !== 'all') {
+          matchesFilter = year === currentFilter;
+        }
+
+        if (matchesQuery && matchesFilter) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', filterPubs);
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-brand-600', 'text-white');
+          b.classList.add('bg-white', 'dark:bg-slate-900', 'text-slate-600', 'dark:text-slate-300');
+        });
+        btn.classList.remove('bg-white', 'dark:bg-slate-900', 'text-slate-600', 'dark:text-slate-300');
+        btn.classList.add('bg-brand-600', 'text-white');
+
+        currentFilter = btn.getAttribute('data-filter');
+        filterPubs();
+      });
+    });
+  </script>
+</body>
+</html>
