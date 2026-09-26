@@ -272,46 +272,88 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <!-- News Card 1 -->
-        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition">
-          <div class="flex items-center justify-between mb-3">
-            <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300">March 2026</span>
-            <span class="text-xs font-semibold text-slate-500">Conference</span>
+        <!-- News Card 1: APS Global Physics Summit -->
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300">March 2026</span>
+              <span class="text-xs font-semibold text-slate-500">Conference</span>
+            </div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white leading-snug">
+              APS Global Physics Summit 2026 (Denver, CO)
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">
+              Oral presentation: <em>"Motility allocation controls glass transition in size-asymmetric mixtures."</em>
+            </p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
+              Authors: <strong class="text-slate-800 dark:text-slate-200">Amir Shee</strong> and Haicen Yue
+            </p>
           </div>
-          <h3 class="text-sm font-bold text-slate-900 dark:text-white leading-snug">
-            APS Global Physics Summit 2026 (Denver, CO)
-          </h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">
-            Presenting our talk: <em>"Motility allocation controls glass transition in size-asymmetric mixtures."</em>
-          </p>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] font-medium text-slate-400 dark:text-slate-500">Denver, CO · March 2026</span>
+            <a href="#presentations" class="inline-flex items-center gap-1 text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline">
+              <span>Session Talk</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
         </div>
 
-        <!-- News Card 2 -->
-        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition">
-          <div class="flex items-center justify-between mb-3">
-            <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">Feb 2026</span>
-            <span class="text-xs font-semibold text-slate-500">Publication</span>
+        <!-- News Card 2: PRE Publication -->
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">Feb 2026</span>
+              <span class="text-xs font-semibold text-slate-500">Publication</span>
+            </div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white leading-snug">
+              Physical Review E
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">
+              <em>"Steering chiral active Brownian motion via stochastic position-orientation resetting"</em>
+            </p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
+              Author: <strong class="text-slate-800 dark:text-slate-200">Amir Shee</strong> (Sole Author)
+            </p>
+            <p class="text-xs font-semibold text-amber-700 dark:text-amber-400 mt-1 font-mono">
+              Phys. Rev. E 113, 025424 (2026)
+            </p>
           </div>
-          <h3 class="text-sm font-bold text-slate-900 dark:text-white leading-snug">
-            New Article in Physical Review E
-          </h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">
-            <em>"Steering chiral active Brownian motion via stochastic position-orientation resetting"</em> published in PRE 113, 025424.
-          </p>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] font-medium text-slate-400 dark:text-slate-500">arXiv:2508.12223</span>
+            <a href="https://doi.org/10.1103/PhysRevE.113.025424" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 hover:text-amber-800 dark:text-amber-400 dark:hover:text-amber-300 hover:underline">
+              <span>View DOI</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
         </div>
 
-        <!-- News Card 3 -->
-        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition">
-          <div class="flex items-center justify-between mb-3">
-            <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300">Oct 2025</span>
-            <span class="text-xs font-semibold text-slate-500">Publication</span>
+        <!-- News Card 3: PRL Publication -->
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300">Oct 2025</span>
+              <span class="text-xs font-semibold text-slate-500">Publication</span>
+            </div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white leading-snug">
+              Physical Review Letters
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">
+              <em>"Tuning steady shear rheology through active dopants"</em>
+            </p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
+              Authors: <strong class="text-slate-800 dark:text-slate-200">Amir Shee</strong>, Ritwik Bandyopadhyay, and Haicen Yue
+            </p>
+            <p class="text-xs font-semibold text-purple-700 dark:text-purple-400 mt-1 font-mono">
+              Phys. Rev. Lett. 135, 168302 (2025)
+            </p>
           </div>
-          <h3 class="text-sm font-bold text-slate-900 dark:text-white leading-snug">
-            Published in Physical Review Letters
-          </h3>
-          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">
-            <em>"Tuning steady shear rheology through active dopants"</em> (Amir Shee, Ritwik Bandyopadhyay, Haicen Yue) published in PRL 135.
-          </p>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] font-medium text-slate-400 dark:text-slate-500">arXiv:2506.05262</span>
+            <a href="https://doi.org/10.1103/PhysRevLett.135.168302" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-purple-700 hover:text-purple-800 dark:text-purple-400 dark:hover:text-purple-300 hover:underline">
+              <span>View DOI</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
