@@ -83,12 +83,13 @@
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
+      <nav class="hidden lg:flex items-center gap-5 text-sm font-medium text-slate-600 dark:text-slate-300">
         <a href="#about" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">About</a>
         <a href="#research" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Research</a>
         <a href="#publications" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Publications</a>
         <a href="#presentations" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Talks</a>
         <a href="#education" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Education</a>
+        <a href="#reviewing" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Reviewing</a>
         <a href="#collaborators" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Collaborators</a>
         <a href="#contact" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Contact</a>
       </nav>
@@ -116,7 +117,7 @@
         </a>
 
         <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
           <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -125,12 +126,13 @@
     </div>
 
     <!-- Mobile Dropdown -->
-    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+    <div id="mobile-menu" class="hidden lg:hidden px-4 pt-2 pb-4 space-y-2 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
       <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
       <a href="#research" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Research</a>
       <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Publications</a>
       <a href="#presentations" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Talks</a>
       <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Education</a>
+      <a href="#reviewing" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Reviewing</a>
       <a href="#collaborators" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Collaborators</a>
       <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
     </div>
@@ -1852,6 +1854,12 @@
             <h4 class="text-sm font-bold text-slate-900 dark:text-white">MPI-PKS Dresden (active23)</h4>
             <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Noise-induced Quenched Disorder in a Dense System of Active Polar Disks</p>
           </div>
+          <div>
+            <a href="https://www.pks.mpg.de/active23" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <span>Conference Website</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
         </div>
 
         <div class="p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -1951,6 +1959,93 @@
               </p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PEER REVIEW ================= -->
+    <section id="reviewing" class="scroll-mt-24 space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+            <span class="w-2.5 h-7 rounded-full bg-brand-600"></span>
+            Peer Review
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-2xl">
+            Referee for journals across five publishing houses. Manuscripts stay confidential.
+          </p>
+        </div>
+        <a href="https://orcid.org/0000-0003-1784-7737" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 self-start px-3 py-1.5 rounded-lg text-xs font-semibold bg-white hover:bg-slate-50 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition">
+          <span>ORCID peer-review record</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 sm:max-w-md">
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 shadow-sm">
+          <div class="text-2xl font-extrabold text-brand-600 dark:text-brand-400">10</div>
+          <div class="text-[11px] uppercase tracking-wider font-semibold text-slate-500 dark:text-slate-400 mt-1">Journals</div>
+        </div>
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 shadow-sm">
+          <div class="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400">5</div>
+          <div class="text-[11px] uppercase tracking-wider font-semibold text-slate-500 dark:text-slate-400 mt-1">Publishing houses</div>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <article class="p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+            <div class="sm:w-56 shrink-0">
+              <div class="text-[11px] font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400">American Physical Society</div>
+              <a href="https://journals.aps.org/" target="_blank" rel="noopener noreferrer" class="mt-1 inline-flex text-xs font-medium text-slate-500 hover:text-brand-600 dark:hover:text-brand-400">journals.aps.org</a>
+            </div>
+            <ul class="flex flex-wrap gap-2">
+              <li><a href="https://journals.aps.org/prl/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 transition">Physical Review Letters</a></li>
+              <li><a href="https://journals.aps.org/pre/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 transition">Physical Review E</a></li>
+              <li><a href="https://journals.aps.org/prresearch/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 transition">Physical Review Research</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+            <div class="sm:w-56 shrink-0">
+              <div class="text-[11px] font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400">IOP Publishing</div>
+              <a href="https://ioppublishing.org/" target="_blank" rel="noopener noreferrer" class="mt-1 inline-flex text-xs font-medium text-slate-500 hover:text-brand-600 dark:hover:text-brand-400">ioppublishing.org</a>
+            </div>
+            <ul class="flex flex-wrap gap-2">
+              <li><a href="https://iopscience.iop.org/journal/1367-2630" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 transition">New Journal of Physics</a></li>
+              <li><a href="https://iopscience.iop.org/journal/1751-8121" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 transition">Journal of Physics A: Mathematical and Theoretical</a></li>
+              <li><a href="https://iopscience.iop.org/journal/0953-8984" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 transition">Journal of Physics: Condensed Matter</a></li>
+              <li><a href="https://iopscience.iop.org/journal/1742-5468" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 transition">Journal of Statistical Mechanics</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <article class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+            <div>
+              <div class="text-[11px] font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400">Springer Nature</div>
+              <a href="https://www.springernature.com/" target="_blank" rel="noopener noreferrer" class="mt-1 inline-flex text-xs font-medium text-slate-500 hover:text-brand-600 dark:hover:text-brand-400">springernature.com</a>
+            </div>
+            <a href="https://www.nature.com/ncomms/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 transition">Nature Communications</a>
+          </article>
+
+          <article class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+            <div>
+              <div class="text-[11px] font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400">Royal Society of Chemistry</div>
+              <a href="https://www.rsc.org/" target="_blank" rel="noopener noreferrer" class="mt-1 inline-flex text-xs font-medium text-slate-500 hover:text-brand-600 dark:hover:text-brand-400">rsc.org</a>
+            </div>
+            <a href="https://pubs.rsc.org/en/journals/journal/sm" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 transition">Soft Matter</a>
+          </article>
+
+          <article class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+            <div>
+              <div class="text-[11px] font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400">Cell Press · Elsevier</div>
+              <a href="https://www.cell.com/" target="_blank" rel="noopener noreferrer" class="mt-1 inline-flex text-xs font-medium text-slate-500 hover:text-brand-600 dark:hover:text-brand-400">cell.com</a>
+            </div>
+            <a href="https://www.cell.com/newton/home" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 transition">Newton</a>
+          </article>
         </div>
       </div>
     </section>
