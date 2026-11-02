@@ -241,7 +241,7 @@
     <section class="border-y border-slate-200/80 dark:border-slate-800/80 py-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 shadow-sm">
-          <div class="text-3xl sm:text-4xl font-extrabold text-brand-600 dark:text-brand-400">17+</div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-brand-600 dark:text-brand-400">18+</div>
           <div class="text-xs uppercase tracking-wider font-semibold text-slate-500 dark:text-slate-400 mt-1">Peer-Reviewed Articles</div>
         </div>
         <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 shadow-sm">
@@ -270,6 +270,35 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <!-- News Card: APS Open Science -->
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300">Oct 2026</span>
+              <span class="text-xs font-semibold text-slate-500">Publication</span>
+            </div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white leading-snug">
+              APS Open Science
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">
+              <em>"Exact dynamics and dimensional effects in torque-driven trapped active Brownian particles"</em>
+            </p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
+              Authors: Anweshika Pattanayak, <strong class="text-slate-800 dark:text-slate-200">Amir Shee</strong>, Abhishek Chaudhuri, and Debasish Chaudhuri
+            </p>
+            <p class="text-xs font-semibold text-teal-700 dark:text-teal-400 mt-1 font-mono">
+              APS Open Sci. 1, 000187 (2026)
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] font-medium text-slate-400 dark:text-slate-500">arXiv:2603.26967</span>
+            <a href="https://doi.org/10.1103/9yjb-kj12" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-teal-700 hover:text-teal-800 dark:text-teal-400 dark:hover:text-teal-300 hover:underline">
+              <span>View DOI</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+        </div>
+
         <!-- News Card 1: APS Global Physics Summit -->
         <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition flex flex-col justify-between">
           <div>
@@ -483,7 +512,7 @@
       <div class="flex items-center gap-2 flex-wrap text-xs font-semibold">
         <button class="pub-filter active px-3.5 py-1.5 rounded-lg bg-brand-600 text-white shadow-sm transition" data-filter="all">All (21)</button>
         <button class="pub-filter px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition" data-filter="highlight">Highlights</button>
-        <button class="pub-filter px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition" data-filter="preprint">Preprints (4)</button>
+        <button class="pub-filter px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition" data-filter="preprint">Preprints (3)</button>
         <button class="pub-filter px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition" data-filter="2026">2026</button>
         <button class="pub-filter px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition" data-filter="2025">2025</button>
         <button class="pub-filter px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition" data-filter="2024">2024</button>
@@ -670,6 +699,65 @@
   doi = {10.1103/PhysRevLett.131.168301}
 }</pre>
             <button onclick="copyBibtex('bib-prl2023')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
+          </div>
+        </article>
+
+        <!-- Paper: Exact dynamics and dimensional effects in torque-driven trapped active Brownian particles -->
+        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2026">
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300">APS Open Science</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2026</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+            Exact dynamics and dimensional effects in torque-driven trapped active Brownian particles
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+            Anweshika Pattanayak*, <strong class="text-slate-900 dark:text-white">Amir Shee*</strong>, Abhishek Chaudhuri, and Debasish Chaudhuri
+          </p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+            APS Open Science 1, 000187 (2026)
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            <a href="https://doi.org/10.1103/9yjb-kj12" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-brand-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-brand-600 dark:text-brand-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2603.26967" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              arXiv
+            </a>
+            <button onclick="toggleAbstract('abs-apsos2026')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h10"></path></svg>
+              Abstract
+            </button>
+            <button onclick="toggleBibtex('bib-apsos2026')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+              BibTeX
+            </button>
+          </div>
+          <div id="abs-apsos2026" class="hidden mt-3 relative p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700/80 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            <div class="flex items-center justify-between pb-2 mb-2.5 border-b border-slate-200/80 dark:border-slate-700/60 font-semibold text-slate-900 dark:text-white text-xs">
+              <span class="flex items-center gap-1.5 text-brand-600 dark:text-brand-400 font-bold">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                Abstract
+              </span>
+              <button onclick="copyAbstract('abs-apsos2026')" class="px-2 py-0.5 rounded text-[11px] font-semibold bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition">Copy</button>
+            </div>
+            <p class="abstract-text text-justify">
+              The interplay of chirality, self-propulsion, and confinement generates pronounced nonequilibrium fluctuations, with higher-order moments encoding the shape of the position distribution. We present an exact analytical framework, based on the Laplace transform of the Fokker-Planck equation, for the transient dynamics of a chiral active Brownian particle in a harmonic trap in two and three dimensions. Closed-form expressions for time-dependent moments up to fourth order allow a full characterization of the excess kurtosis across transient and steady-state regimes. In two dimensions, the excess kurtosis exhibits damped oscillations with multiple reentrant crossovers, evolving from negative values, indicative of off-centered ringlike distributions, to small positive values characteristic of near-Gaussian distributions with a weak tail enhancement; increasing trap stiffness progressively suppresses this oscillatory response. In three dimensions, the excess kurtosis of a torque-driven active Brownian particle stays negative, reflecting robust non-Gaussian fluctuations with half-ring-like to bandlike position distributions in the plane defined by the torque axis. These results reveal how chirality, propulsion, confinement, and dimensionality jointly shape transient dynamics and provide experimentally accessible signatures of confined chiral active motion.
+            </p>
+          </div>
+          <div id="bib-apsos2026" class="hidden mt-3 relative">
+            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{pattanayak2026exact,
+  title = {Exact dynamics and dimensional effects in torque-driven trapped active Brownian particles},
+  author = {Pattanayak, Anweshika and Shee, Amir and Chaudhuri, Abhishek and Chaudhuri, Debasish},
+  journal = {APS Open Science},
+  volume = {1},
+  pages = {000187},
+  year = {2026},
+  doi = {10.1103/9yjb-kj12}
+}</pre>
+            <button onclick="copyBibtex('bib-apsos2026')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
           </div>
         </article>
 
@@ -1132,59 +1220,6 @@
   url = {https://arxiv.org/abs/2604.15105}
 }</pre>
             <button onclick="copyBibtex('bib-preprint-passivity')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
-          </div>
-        </article>
-
-        <!-- Paper: Characterizing exact dynamics of a trapped active Brownian particle under torque in two and three dimensions -->
-        <article class="pub-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-500/60 transition" data-year="2026" data-category="preprint">
-          <div class="flex flex-wrap items-center gap-2 mb-2">
-            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">Preprint Under Review</span>
-            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2026</span>
-          </div>
-          <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
-            Characterizing exact dynamics of a trapped active Brownian particle under torque in two and three dimensions
-          </h3>
-          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
-            Anweshika Pattanayak*, <strong class="text-slate-900 dark:text-white">Amir Shee*</strong>, Abhishek Chaudhuri, and Debasish Chaudhuri
-          </p>
-          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
-            arXiv:2603.26967 (2026)
-          </p>
-          <div class="mt-3 flex flex-wrap items-center gap-2">
-            <a href="https://arxiv.org/abs/2603.26967" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-red-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-red-600 dark:text-red-400 border border-slate-200/80 dark:border-slate-700 transition">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-              arXiv
-            </a>
-            <button onclick="toggleAbstract('abs-preprint-torque')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h10"></path></svg>
-              Abstract
-            </button>
-            <button onclick="toggleBibtex('bib-preprint-torque')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 transition">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
-              BibTeX
-            </button>
-          </div>
-          <div id="abs-preprint-torque" class="hidden mt-3 relative p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700/80 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-            <div class="flex items-center justify-between pb-2 mb-2.5 border-b border-slate-200/80 dark:border-slate-700/60 font-semibold text-slate-900 dark:text-white text-xs">
-              <span class="flex items-center gap-1.5 text-brand-600 dark:text-brand-400 font-bold">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                Abstract
-              </span>
-              <button onclick="copyAbstract('abs-preprint-torque')" class="px-2 py-0.5 rounded text-[11px] font-semibold bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition">Copy</button>
-            </div>
-            <p class="abstract-text text-justify">
-              The interplay of chirality, self-propulsion, and spatial confinement generates striking non-equilibrium fluctuations whose higher-order statistics carry information about the dynamics and shape of the position distribution. Here, we present an exact analytical framework, based on a Laplace-transform solution of the Fokker-Planck equation, for the transient dynamics of a chiral active Brownian particle in a harmonic trap, in both two and three dimensions. We obtain closed-form expressions for all time-dependent moments up to fourth order, enabling a complete characterization of the excess kurtosis throughout the transient and steady-state regimes. In two dimensions, the excess kurtosis exhibits a damped oscillatory response with multiple re-entrant crossovers, evolving from negative values that reflect active off-centered ring-like position distributions to positive values characteristic of heavy-tailed fluctuations. This damped oscillatory excess kurtosis appears both for free and harmonic confinement, although increasing the trapping stiffness progressively suppresses it, and the positive excess kurtosis eventually vanishes at sufficiently high stiffness. In contrast, in three dimensions, the excess kurtosis remains negative, indicating a robustly active non-Gaussian state characterized by half-ring-like to band-like position distributions in the two-dimensional plane spanned by the torque axis and its normal radial direction. Our results demonstrate how chirality, propulsion, and confinement, together with dimensionality, shape transient dynamics, while providing experimentally accessible signatures of confined chiral active dynamics.
-            </p>
-          </div>
-          <div id="bib-preprint-torque" class="hidden mt-3 relative">
-            <pre class="p-3.5 rounded-xl bg-slate-900 text-slate-200 text-[11px] font-mono overflow-x-auto leading-relaxed border border-slate-800">@article{pattanayak2026characterizing,
-  title = {Characterizing exact dynamics of a trapped active Brownian particle under torque in two and three dimensions},
-  author = {Pattanayak, Anweshika and Shee, Amir and Chaudhuri, Abhishek and Chaudhuri, Debasish},
-  journal = {arXiv:2603.26967},
-  year = {2026},
-  url = {https://arxiv.org/abs/2603.26967}
-}</pre>
-            <button onclick="copyBibtex('bib-preprint-torque')" class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Copy</button>
           </div>
         </article>
 
